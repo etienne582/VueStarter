@@ -1,9 +1,0 @@
-<template>
-    <div>Hello</div>
-</template>
-
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-@Component({})
-export default class NewHome extends Vue {}
-</script>

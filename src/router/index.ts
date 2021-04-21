@@ -1,8 +1,9 @@
 import Vue from 'vue'
+
 import VueRouter, { RouteConfig } from 'vue-router'
-// eslint-disable-next-line
-import Home from '../views/Home.vue'
-import NewHome from '@/views/NewHome.vue'
+
+import NewHome from '@/views/Home.vue'
+import About from '@/views/About.vue'
 
 Vue.use(VueRouter)
 
@@ -10,20 +11,13 @@ const routes: Array<RouteConfig> = [
     {
         path: '/',
         name: 'Home',
-        component: NewHome,
+        component: NewHome
     },
     {
         path: '/about',
         name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-    },
+        component: About
+    }
 ]
 
-const router = new VueRouter({
-    routes,
-})
-
-export default router
+export default new VueRouter({ routes })
