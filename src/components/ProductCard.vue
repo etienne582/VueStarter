@@ -3,8 +3,8 @@
         <v-list-item three-line>
             <v-list-item-content>
                 <v-list-item-title class="headline mb-1">
-                    Produit
-                    <v-icon large class="icon">mdi-credit-card</v-icon>
+                    {{ title }}
+                    <v-icon large>mdi-credit-card</v-icon>
                 </v-list-item-title>
                 <v-list-item-subtitle>
                     <div>Nombre</div>
@@ -16,13 +16,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({})
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+    props: {
+        title: { type: String, required: true }
+    }
+})
+export default class ProductCard extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v-icon {
-    color: $secondary !important;
+    color: $secondary;
     float: right;
 }
 .v-list-item__subtitle {

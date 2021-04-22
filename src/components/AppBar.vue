@@ -19,7 +19,7 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class AppBar extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app-bar {
     background-color: $primary;
 }
