@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mx-auto" max-width="344" outlined>
+    <v-card class="mx-auto" max-width="344" outlined :to="'/about'">
         <v-list-item three-line>
             <v-list-item-content>
                 <v-list-item-title class="headline mb-1">
@@ -16,13 +16,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-@Component({
-    props: {
-        title: { type: String, required: true }
-    }
-})
-export default class ProductCard extends Vue {}
+import { Component, Prop, Vue } from 'vue-property-decorator'
+@Component
+export default class ProductCard extends Vue {
+    @Prop() readonly title!: string
+}
 </script>
 
 <style lang="scss" scoped>
